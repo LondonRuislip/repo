@@ -1,0 +1,26 @@
+{
+  "name": "london-ruislip-project",
+  "version": "1.0.0",
+  "description": "London Ruislip Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LondonRuislip/repo.git"
+  },
+  "keywords": [
+    "London",
+    "Ruislip"
+  ],
+  "author": "Kostas Mamalis (@mamalisk)",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/LondonRuislip/repo/issues"
+  },
+  "homepage": "https://github.com/LondonRuislip/repo#readme",
+  "dependencies": {
+    "lerna": "2.5.1"
+  }
+}
