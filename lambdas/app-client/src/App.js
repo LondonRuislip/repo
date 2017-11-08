@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
-import UserList from './components/UserList';
-import logo from './logo.svg';
+import EndNav from './components/BottomNavigation';
+import Login from './components/Login';
 import './App.css';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import AppBar from 'material-ui/AppBar';
+import logo from './logo.png';
+import {orange700} from 'material-ui/styles/colors';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+
 
 import {
   ApolloClient,
@@ -17,23 +23,31 @@ const client = new ApolloClient({
   networkInterface,
 });
 
+const muiTheme = getMuiTheme({
+  palette: {
+    primary1Color: orange700
+  }
+})
+
 class App extends Component {
   render() {
     return (
       <ApolloProvider client={client}>
+        <MuiThemeProvider muiTheme={muiTheme}>
         <div className="App">
-          <div className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h2>Serverless GraphQL Apollo </h2>
-          </div>
-          <p className="App-intro">
-            Welcome to the world of <code>Serverless</code> and{' '}
-            <code>GraphQL</code>.
-          </p>
-          <p className="App-User">
-            <UserList />
-          </p>
+          <AppBar
+            title="London Ruislip Congregation"
+            iconClassNameRight="muidocs-icon-navigation-expand-more"
+            />
+          
+          <Login />
+          <div>
+          <image src={logo} Alt='Logo' style={{ width: '40', height: '100' }}/>
+            </div>
+          <EndNav />
         </div>
+          
+        </MuiThemeProvider>
       </ApolloProvider>
     );
   }
